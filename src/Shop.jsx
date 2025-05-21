@@ -108,7 +108,7 @@ export default function Shop()
                 />
                 <div className="attribution">Attributions</div>
                 <Link to="/cart" className="cart-container">
-                    <img alt="Cart-icon" className="cart-icon" src="Images/cart-basket-icon.png"/>
+                    <img alt="Cart-icon" className="cart-icon" src="./Images/cart-basket-icon.png" />
                     <div className="cart">Cart</div>
                     {cartQuantity !== 0 && <div className="cart-quantity">{cartQuantity}</div>}
                 </Link>

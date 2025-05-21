@@ -5,14 +5,14 @@ import ShopSpecific from "./ShopSpecific.jsx";
 import ShopSearched from "./ShopSearched.jsx";
 import Cart from "./Cart.jsx";
 import CheckOut from './Checkout.jsx';
-import { createBrowserRouter, RouterProvider, useLocation} from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import "./Styles/sideBar.css"
 import "./Styles/topBar.css"
 import "./Styles/shopDisplay.css"
 import "./Styles/cartDisplay.css"
 import "./Styles/topBarCart.css"
 
-const router = createBrowserRouter([
+/*const router = createBrowserRouter([
 {
     path: '/',
     element: <Shop />,
@@ -39,9 +39,20 @@ const router = createBrowserRouter([
 {
     path: '/cart',
     element: <Cart/>
-}])
+}])*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <RouterProvider router={router} />
+    <HashRouter>
+        <Routes>
+            <Route path="/" element={<Shop/>}>
+                <Route index element={<ShopSpecific/>}/>
+                <Route path="category/:category" element={<ShopSpecific/>}/>
+                <Route path="searched/:text" element={<ShopSearched/>}/>
+            </Route>
+            <Route path="/checkout" element={<CheckOut/>} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<div>404 not found</div>} />
+        </Routes>
+    </HashRouter>
 );
