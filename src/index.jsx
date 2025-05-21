@@ -14,6 +14,10 @@ import "./Styles/topBarCart.css"
 
 const router = createBrowserRouter([
 {
+    index: true,
+    element: <Shop />
+},
+{
     path: '/',
     element: <Shop />,
     errorElement: <div>404 not found</div>,
