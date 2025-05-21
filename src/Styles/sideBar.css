@@ -1,0 +1,17 @@
+.sideBar 
+{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    top: 0px;
+    width: 500px;
+    background-color: red;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.Johannesburg
+{
+    height: 100%;
+    object-position: -550px;
+}
