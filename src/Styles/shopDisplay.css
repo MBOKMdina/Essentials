@@ -10,6 +10,11 @@
     position: relative;
 }
 
+.thumbnail
+{
+    height: 0px;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -263,4 +268,54 @@ body, html {
     text-decoration: none;
     color: black;
 }
+
+/*@media(max-width: 1200px)
+{
+    .thumbnail
+    {
+        position: absolute;
+        background-color: white;
+        z-index: 3;
+        top: 0px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .logo-thumbnail
+    {
+        display: flex;
+        font-size: 50px;
+        font-weight: bold;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        white-space: nowrap;
+    }
+
+    .logo-thumbnail .k-container
+    {
+        background-color: darkred;
+        height: 80px;
+        width: 80px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 60px;
+        color: white;
+    }
+
+    .items-catalog
+    {
+        width: 0px;
+        height: 0px;
+        display: none;
+    }
+}*/
+
+
 

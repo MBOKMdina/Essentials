@@ -35,6 +35,7 @@ export default function Cart()
 
                 const Items = cart.map(item =>
                     <CartItem
+                        key={item.productId}
                         cartItem={item}
                         products={combinedIdentyArr}
                         clicked={setCartItems}
@@ -49,7 +50,7 @@ export default function Cart()
             };
         }, []);
     return(
-    <><div className="top-bar">
+    <><div className="top-bar-cart">
         <div className="decorative-strip-container">
             <img src="./Images/Joburg(CBD).jpg" className="decorative-strip"/>
             <div className="decorative-cube"></div>
@@ -82,7 +83,10 @@ export default function Cart()
             {cartItems}
         </div>
         <div className="section2">
-            <OrderBox/>
+            <OrderBox 
+                cart={cart}
+                products={productData}
+            />
         </div>
     </div></>)
 }

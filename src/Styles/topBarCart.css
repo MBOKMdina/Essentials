@@ -1,4 +1,4 @@
-.top-bar
+.top-bar-cart
 {
     display: flex;
     width: 100%;
@@ -39,6 +39,19 @@
     /*left: 300px*/
     /*display: inline-block;*/
     /*left: 500px;*/
+}
+
+.logo-contents-cart .k-container
+{
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    color: darkred;
 }
 
 .decorative-strip-container

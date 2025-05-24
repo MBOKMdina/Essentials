@@ -1,16 +1,17 @@
 import React from "react";
 import { cart } from "../Shop";
+import QuantityUI from "./QuantityUI.jsx"
 
 export default function Item(props)
 {
     const [selected, setSelected] = React.useState(false);
     const background = React.useRef(null);
     const quantityUI = React.useRef(null);
-    /*const [errorMessage, setErrorMessage] = React.useState("");*/
     const [inputValue, setInputValue] = React.useState('');
-    let error = false;
     let errorMessage = "";
     let intInput = parseInt(inputValue);
+
+    let error = false;
 
     if(intInput < 0)
     {
@@ -92,8 +93,8 @@ export default function Item(props)
         <div className="item-title">{props.name}</div>
         <button onClick={toggleQUI} className="addToCart-btn">Add to basket</button>
     </div>
-    { selected /*props.name === "Lash Princess Mascara"*/ && <><div ref={background} className="quantity-background"></div>
-    <div ref={quantityUI} className="quantity">
+    { selected && <><div ref={background} className="quantity-background"></div>
+    <div ref= {quantityUI} className="quantity">
         <div onClick={toggleQUI} className="close-QUI">
             <img className="x" src="Images/close.png"/>
         </div>
@@ -109,6 +110,5 @@ export default function Item(props)
                 <button className="submit-Qty">Submit</button>
             </form>
         </div>
-    </div></>}
-    </>)
+    </div></>}</>)
 }

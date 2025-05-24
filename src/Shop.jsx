@@ -6,6 +6,7 @@ import { itemsSearch } from "./Components/SearchBar.jsx";
 import Logo from "./Components/Logo.jsx";
 import SearchBar from "./Components/SearchBar.jsx";
 import { Link, Outlet} from 'react-router-dom'
+/*import joburgCBD from '../public/Images/Joburg(CBD).jpg'*/
 export let cart
 
 export default function Shop()
@@ -92,10 +93,15 @@ export default function Shop()
     /*console.log(productData);*/
 
     return (<>
-        <div className="sideBar">
-            <img alt="Johannesburg CBD" className="Johannesburg" src="Images/Joburg(CBD).jpg"/>
+        <div className="thumbnail">
+            <Logo
+                className="logo-thumbnail"
+            />
         </div>
-        <div className="topBar">
+        <div className="side-bar">
+            <img alt="Johannesburg CBD" className="Johannesburg" src={`Images/Joburg(CBD).jpg`} />
+        </div>
+        <div className="top-bar">
             <div className="top-section">
                 <Logo className="logo-contents"/>
                 <SearchBar 
@@ -108,7 +114,7 @@ export default function Shop()
                 />
                 <div className="attribution">Attributions</div>
                 <Link to="/cart" className="cart-container">
-                    <img alt="Cart-icon" className="cart-icon" src="./Images/cart-basket-icon.png" />
+                    <img alt="Cart-icon" className="cart-icon" src="Images/cart-basket-icon.png" />
                     <div className="cart">Cart</div>
                     {cartQuantity !== 0 && <div className="cart-quantity">{cartQuantity}</div>}
                 </Link>

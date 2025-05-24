@@ -1,4 +1,4 @@
-.topBar
+.top-bar
 {
     position: fixed;
     top: 0px;
@@ -75,7 +75,7 @@
     white-space: nowrap;
 }
 
-.k-container
+.logo-contents .k-container
 {
     background-color: white;
     height: 40px;
@@ -206,3 +206,13 @@
 {
     position: relative;
 }
+
+/*@media(max-width: 1200px)
+{
+    .top-bar
+    {
+        display: none;
+        height: 0px;
+        left: 0px;
+    }
+}*/
