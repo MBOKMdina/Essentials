@@ -10,7 +10,12 @@
     z-index: 1;
 }
 
-.Johannesburg
+.top-bar-APK
+{
+   display: none; 
+}
+
+.johannesburg
 {
     height: 100%;
     object-position: -550px;
@@ -30,3 +35,63 @@
         height: 0px;
     }
 }*/
+
+/*@media(max-width: 370px)
+{
+    .side-bar
+    {
+        display: none;
+    }
+
+    .top-bar-APK
+    {
+        top: 0px;
+        display: flex;
+        width: calc(100% + 12.5px);
+        margin-left: -6.25px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .johannesburg-APK
+    {
+        width: 100%;
+    }
+}*/
+
+@media(max-width: 450px)
+{
+    .side-bar
+    {
+        display: none;
+    }
+
+    .top-bar-APK
+    {
+        top: 0px;
+        display: flex;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .johannesburg-APK
+    {
+        width: 100%;
+    }
+}
+
+@media(max-width: 740px) and (max-height: 360px)
+{
+    .side-bar
+    {
+        width: 200px;
+    }
+
+    .johannesburg
+    {
+        height: 100%;
+        object-position: -360px;
+    }
+
+}

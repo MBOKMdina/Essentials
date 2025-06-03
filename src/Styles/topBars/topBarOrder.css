@@ -1,0 +1,54 @@
+.top-bar-order
+{
+    top: 0px;
+    display: flex;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    height: 40px;
+    position: fixed;
+    /*top: 0px;*/
+    overflow: hidden;
+    z-index: 1;
+}
+
+.logo-contents-order
+{
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.logo-contents-order .k-container
+{
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    color: darkred;
+}
+
+.attribution-order
+{
+    font-size: 13px;
+    margin-left: 20px;
+    padding: 10px 15px;
+    background-color: lightgray;
+    border-radius: 38px;
+    font-family: "Roboto";
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}

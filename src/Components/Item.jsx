@@ -1,6 +1,6 @@
 import React from "react";
 import { cart } from "../Shop";
-import QuantityUI from "./QuantityUI.jsx"
+let scrollY;
 
 export default function Item(props)
 {
@@ -8,10 +8,7 @@ export default function Item(props)
     const background = React.useRef(null);
     const quantityUI = React.useRef(null);
     const [inputValue, setInputValue] = React.useState('');
-    let errorMessage = "";
     let intInput = parseInt(inputValue);
-
-    let error = false;
 
     if(intInput < 0)
     {
@@ -22,14 +19,20 @@ export default function Item(props)
     React.useEffect(() => {
     if (selected) 
     {
-        const scrollY = window.scrollY;
+
+        scrollY = window.scrollY;
         background.current.style.marginTop = `${scrollY}px`;
         quantityUI.current.style.marginTop = `${scrollY}px`;
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`
     } 
     else 
     {
+        document.body.style.top = ``;
         document.body.style.overflow = 'auto';
+        document.body.style.position = '';
+        window.scrollTo(0, scrollY);
     }
     }, [selected]);
 
@@ -38,7 +41,7 @@ export default function Item(props)
         setSelected(prevValue => !prevValue);
     }
 
-    function handleInput(event)
+    function evaluateInput(event)
     {
         event.preventDefault();
         if(inputValue === "")
@@ -68,7 +71,8 @@ export default function Item(props)
                 let newItem = 
                 {
                     productId: props.id,
-                    quantity: intInput
+                    quantity: intInput,
+                    deliveryOption: 50
                 }
                 cart.push(newItem);
             }
@@ -79,34 +83,50 @@ export default function Item(props)
         
     }
 
+    function inputHandler(e)
+    {
+        const value = e.target.value;
+        if(value < 0)
+        {
+            setInputValue(0)
+        }
+        else
+        {
+            setInputValue(value)
+        }
+    }
+
     let rands = (props.price*18.56).toFixed(2);
     let delimiterP = rands.toString().split(".");
     let priceRand = delimiterP[0];
     let priceCents = delimiterP[1];
     return (
     <>
-    <div key={props.key} className="item" data-item-id={props.id}>
+    <div key={props.id} className="item" data-item-id={props.id}>
         <div className="image-canvas">
             <img alt="product item" className="item-image" src={props.image}/>
         </div>
-        <div className="item-price"><span className="rands">R</span>{priceRand}<span className="cents">.{priceCents}</span></div>
-        <div className="item-title">{props.name}</div>
-        <button onClick={toggleQUI} className="addToCart-btn">Add to basket</button>
+        <div className="item-information">
+            <div className="item-price"><span className="rands">R</span>{priceRand}<span className="cents">.{priceCents}</span></div>
+            <div className="item-title">{props.name}</div>
+            <button onClick={toggleQUI} className="addToCart-btn">Add to cart</button>
+        </div>
     </div>
-    { selected && <><div ref={background} className="quantity-background"></div>
+    {selected && <><div ref={background} className="quantity-background"></div>
     <div ref= {quantityUI} className="quantity">
         <div onClick={toggleQUI} className="close-QUI">
             <img className="x" src="Images/close.png"/>
         </div>
         <div className="quantity-contents">
-            <div className="item-title-QUI">{props.name}</div>
-            <div className="canvas-QUI">
-                <img alt="product item" className="item-image" src={props.image}/>
+            <div className="wrapper-QUI">
+                <div className="item-title-QUI">{props.name}</div>
+                <div className="canvas-QUI">
+                    <img alt="product item" className="item-image" src={props.image}/>
+                </div>
             </div>
-            <form onSubmit={handleInput} className="data-handling">
+            <form onSubmit={evaluateInput} className="data-handling">
                 <label className="quantity-lbl">Enter the quantity you would like to add</label>
-                <input onChange={(e)=>setInputValue(e.target.value)} id="quantity" type="number" className="quantity-InptFld"/>
-                { error && <div className="input-error">{errorMessage}</div> }
+                <input onChange={inputHandler} value={inputValue} id="quantity" type="number" className="quantity-InptFld"/>
                 <button className="submit-Qty">Submit</button>
             </form>
         </div>

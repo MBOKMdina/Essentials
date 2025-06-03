@@ -34,5 +34,14 @@ export default function ShopSpecific()
         />)
     }
     
-    return (<div className="items-catalog">{render}</div>);
+    return (
+    <div className="main-shop-display">
+        {/*<div className="cover-page"></div>*/}
+        <div className="top-bar-APK">
+            <img alt="Johannesburg CBD" className="johannesburg-APK" src={`Images/Joburg(CBD).jpg`} />
+        </div>
+        <div className="items-catalog">
+            {render}
+        </div>
+    </div>)
 }

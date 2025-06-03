@@ -1,0 +1,36 @@
+.body-attributions
+{
+    background-color: lightgray;
+    /*display: flow-root;*/
+    padding: 20px 0px;
+}
+
+.credits
+{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-right: 20px;
+    bottom: 0px;
+    width: 500px;
+    display: flow-root;
+    height: calc(100vh - 60px);
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.credits-heading
+{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+.credits > a
+{
+    display: block;
+    margin-bottom: 10px;
+}
+

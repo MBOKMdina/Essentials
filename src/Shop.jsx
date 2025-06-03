@@ -5,8 +5,8 @@ import { itemsCat } from "./Components/Category.jsx";
 import { itemsSearch } from "./Components/SearchBar.jsx";
 import Logo from "./Components/Logo.jsx";
 import SearchBar from "./Components/SearchBar.jsx";
-import { Link, Outlet} from 'react-router-dom'
-/*import joburgCBD from '../public/Images/Joburg(CBD).jpg'*/
+import { Link, Outlet} from 'react-router-dom';
+import Attribution from "./Components/AttributionButton.jsx";
 export let cart
 
 export default function Shop()
@@ -57,7 +57,7 @@ export default function Shop()
             product.title === "Wooden Bathroom Sink With Mirror" ? {...product, title: "Wood Vanity Set"}:
             product.title === "Knoll Saarinen Executive Conference Chair" ? {...product, title: "Saarinen Conference Chair"}:
             product.title === "Asus Zenbook Pro Dual Screen Laptop" ? {...product, title: "Zenbook Pro Duo"}:
-            product.title === "Apple MacBook Pro 14 Inch Space Grey" ? {...product, title: "MacBook Pro 14″ – Space Grey"}:
+            product.title === "Apple MacBook Pro 14 Inch Space Grey" ? {...product, title: "MacBook Pro 14″ - space grey"}:
             product.title === "New DELL XPS 13 9300 Laptop" ? {...product, title: "DELL XPS 13 9300 Laptop"}:
             product.title === "Nike Air Jordan 1 Red And Black" ? {...product, title: "Nike Air Jordan 1"}:
             product.title === "Sports Sneakers Off White & Red" ? {...product, title: "Sports Sneakers Deluxe"}:
@@ -93,13 +93,8 @@ export default function Shop()
     /*console.log(productData);*/
 
     return (<>
-        <div className="thumbnail">
-            <Logo
-                className="logo-thumbnail"
-            />
-        </div>
         <div className="side-bar">
-            <img alt="Johannesburg CBD" className="Johannesburg" src={`Images/Joburg(CBD).jpg`} />
+            <img alt="Johannesburg CBD" className="johannesburg" src="Images/Joburg(CBD).jpg" />
         </div>
         <div className="top-bar">
             <div className="top-section">
@@ -112,14 +107,14 @@ export default function Shop()
                     }}
                     className="search-bar"
                 />
-                <div className="attribution">Attributions</div>
+                <Attribution className="attribution"/>
                 <Link to="/cart" className="cart-container">
                     <img alt="Cart-icon" className="cart-icon" src="Images/cart-basket-icon.png" />
                     <div className="cart">Cart</div>
                     {cartQuantity !== 0 && <div className="cart-quantity">{cartQuantity}</div>}
                 </Link>
             </div>
-            <div className="categoryContainer">
+            <div className="category-container">
                 { !loading && <><Category
                     category="all"
                     label= "All"
@@ -200,9 +195,7 @@ export default function Shop()
                 /></>}             
             </div>
         </div>
-        {/*<div className="items-catalog">
-            {display}
-        </div>*/}
+        <div className="shop-heading">Products</div>
         <Outlet context={{reload, productData, setCartQuantity}}/>
     </>)
 }

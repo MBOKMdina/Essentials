@@ -1,0 +1,110 @@
+.body-order
+{
+    background-color: lightgray;
+    /*display: flow-root;*/
+    padding: 20px 0px;
+}
+
+.receipt-display
+{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
+    margin-right: 20px;
+    bottom: 0px;
+    width: 500px;
+    display: flow-root;
+    height: auto;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.order-confirmation
+{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.encouragement
+{
+    margin-bottom: 5px;
+}
+
+.order-number
+{
+    margin-bottom: 20px;
+}
+
+span
+{
+    font-weight: bold;
+}
+
+.border
+{
+    height: 0px;
+    width: 100%;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    margin-bottom: 20px;
+}
+
+.total-paid
+{
+    margin-bottom: 20px;
+}
+
+.your-items
+{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.item-details
+{
+    margin-bottom: 20px;
+}
+
+.canvas-order
+{
+    width: 100px;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.order-image
+{
+    width: 100%;
+}
+
+.item-order
+{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.details
+{
+    margin-left: 10px;
+}
+
+.details > div
+{
+    margin-bottom: 10px;
+}
+
+@media (max-width: 450px)
+{
+    .receipt-display
+    {
+        width: calc(100% - 40px);
+        /*margin-top: 40px;*/
+    }
+}

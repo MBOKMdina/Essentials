@@ -2,14 +2,18 @@ import CartItem from "./Components/CartItem.jsx";
 import Logo from "./Components/Logo.jsx";
 import SearchBar from "./Components/SearchBar.jsx";
 import React from "react";
-import OrderBox from "./Components/orderBox.jsx";
+import OrderBox from "./Components/OrderBox.jsx";
 import { Link } from 'react-router-dom'
+import ShopButton from "./Components/shopButton.jsx";
+import Attribution from "./Components/AttributionButton.jsx";
 
 export default function Cart()
 {
     const [productData, setProductData] = React.useState([])
     const [cartItems, setCartItems ] = React.useState([]);
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];;
+    const [newKey, setKey] = React.useState(0);
+    /*const [deliveryFee, setdeliveryFee] = React.useState(0);*/
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     React.useEffect(() => {
         document.body.classList.add('body-cart');
@@ -36,10 +40,11 @@ export default function Cart()
                 const Items = cart.map(item =>
                     <CartItem
                         key={item.productId}
+                        setKey={newKeyGenerator}
                         cartItem={item}
                         products={combinedIdentyArr}
                         clicked={setCartItems}
-
+                        /*setDeliveryFee={setdeliveryFee}*/
                     />)
 
                 
@@ -49,8 +54,28 @@ export default function Cart()
                 document.body.classList.remove('body-cart');
             };
         }, []);
+
+    function newKeyGenerator()
+    {
+        setKey((prev)=>
+        {
+            if(prev === 1)
+            {
+                prev = prev - 1;
+            }
+            else
+            if(prev === 0)
+            {
+                prev = prev + 1;
+            }
+            console.log(`This is the reload control variable: ${prev}`);
+            return prev;
+        })
+    }
+
     return(
     <><div className="top-bar-cart">
+        <div className="deco-2"></div>
         <div className="decorative-strip-container">
             <img src="./Images/Joburg(CBD).jpg" className="decorative-strip"/>
             <div className="decorative-cube"></div>
@@ -58,10 +83,7 @@ export default function Cart()
         <div className="left-package">
             <Logo className="logo-contents-cart"/>
             <div className="link-enclosed">
-                <Link to="/" className="home-page-link">
-                    <img className="shop-icon" src="/Images/shop.png" />
-                    <div className="shop">Shop</div>
-                </Link>
+                <ShopButton className="home-page-link"/>
             </div>
         </div>
         <div className="right-package">
@@ -73,20 +95,26 @@ export default function Cart()
                 }}
                 className="search-bar-cart"
             />
-            <div className="attribution-cart">Attributions</div>
+            <Attribution className="attribution-cart"/>
         </div>
     </div>
-    <div className="back-ground"></div>
     <div className="cart-display">
+        {cart.length === 0 && <div className="empty-cart">items added to cart and total price summary will display here</div>}
         <div className="section1">
             <div className="cart-heading">Cart</div>
+            {cartItems.length === 0 && cart.length !== 0 && 
+            <>
+                <div className="loading">Loading...</div>
+                <div>Make sure your connected to the internet!</div>
+            </>}
             {cartItems}
         </div>
         <div className="section2">
-            <OrderBox 
+            {cart.length !== 0 && <OrderBox
+                key={newKey}
                 cart={cart}
                 products={productData}
-            />
+            />}
         </div>
     </div></>)
 }

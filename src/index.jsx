@@ -4,13 +4,17 @@ import Shop from "./Shop.jsx"
 import ShopSpecific from "./ShopSpecific.jsx";
 import ShopSearched from "./ShopSearched.jsx";
 import Cart from "./Cart.jsx";
-import CheckOut from './Checkout.jsx';
+import OrderPage from './OrderPage.jsx';
+import Attribution from './Attribution.jsx';
 import { createBrowserRouter, RouterProvider, useLocation} from 'react-router-dom'
 import "./Styles/sideBar.css"
-import "./Styles/topBar.css"
-import "./Styles/shopDisplay.css"
-import "./Styles/cartDisplay.css"
-import "./Styles/topBarCart.css"
+import "./Styles/topBars/topBar.css"
+import "./Styles/displays/shopDisplay.css"
+import "./Styles/displays/cartDisplay.css"
+import "./Styles/topBars/topBarCart.css"
+import "./Styles/displays/OrderPage.css"
+import "./Styles/topBars/topBarOrder.css"
+import "./Styles/displays/attributions.css"
 
 const router = createBrowserRouter([
 {
@@ -32,13 +36,17 @@ const router = createBrowserRouter([
     }]
 },
 {
-    path: '/checkout',
-    element: <CheckOut/>,
-    errorElement: <div>404 noot found</div>
+    path: '/order+confirmation',
+    element: <OrderPage/>,
+    errorElement: <div>404 not found</div>
 },
 {
     path: '/cart',
     element: <Cart/>
+},
+{
+    path: '/attribution',
+    element: <Attribution/>
 }])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
