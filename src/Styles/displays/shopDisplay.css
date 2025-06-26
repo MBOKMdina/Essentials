@@ -308,7 +308,7 @@ body, html {
     color: black;
 }
 
-@media(max-width: 450px)
+@media(max-width: 550px)
 {
     .items-catalog
     {
@@ -382,7 +382,7 @@ body, html {
     }
 }
 
-@media(max-width: 740px) and (max-height: 360px)
+@media(max-width: 890px) and (max-height: 360px)
 {
     .main-shop-display
     {
@@ -458,6 +458,88 @@ body, html {
     {
         align-items: flex-start;
         width: 200px;
+    }
+}
+
+@media(max-width: 900px) and (min-width: 710px) and (min-height: 361px)
+{
+    .items-catalog
+    {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .main-shop-display
+    {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100vw;
+        margin-top: 100px;
+        height: calc(100vh - 140px);
+    }
+
+    .item
+    {
+        padding: 6.25px;
+    }
+
+    .item-title
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .quantity-background
+    {
+        width: calc(100% + 12.5px);
+        margin-left: -6.25px;
+        top: 0px;
+    }
+
+    .quantity
+    {
+        padding: 25px;
+    }
+
+    .canvas-QUI
+    {
+        width: 100px;
+    }
+
+    .quantity-lbl
+    {
+        font-size: 13px;
+    }
+
+    .item-title-QUI
+    {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1200px) and (min-width: 901px) and (max-height: 900px)
+{
+    .main-shop-display
+    {
+        margin-left: 400px;
+        margin-top: 140px;
+        width: calc(100% - 400px);
+    }
+}
+
+@media(max-width: 1200px) and (min-height: 901px) and (max-height: 1400px)
+{
+    .main-shop-display
+    {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .items-catalog
+    {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 

@@ -94,7 +94,7 @@ export default function Shop()
 
     return (<>
         <div className="side-bar">
-            <img alt="Johannesburg CBD" className="johannesburg" src="Images/Joburg(CBD).jpg" />
+            <img alt="Johannesburg CBD" className="johannesburg" src="/Images/Joburg(CBD).jpg" />
         </div>
         <div className="top-bar">
             <div className="top-section">
@@ -109,7 +109,7 @@ export default function Shop()
                 />
                 <Attribution className="attribution"/>
                 <Link to="/cart" className="cart-container">
-                    <img alt="Cart-icon" className="cart-icon" src="Images/cart-basket-icon.png" />
+                    <img alt="Cart-icon" className="cart-icon" src="/Images/cart-basket-icon.png" />
                     <div className="cart">Cart</div>
                     {cartQuantity !== 0 && <div className="cart-quantity">{cartQuantity}</div>}
                 </Link>

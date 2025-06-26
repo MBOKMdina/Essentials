@@ -43,7 +43,6 @@
 .attribution-order
 {
     font-size: 13px;
-    margin-left: 20px;
     padding: 10px 15px;
     background-color: lightgray;
     border-radius: 38px;
@@ -51,4 +50,53 @@
     cursor: pointer;
     text-decoration: none;
     color: black;
+}
+
+.home-page-link-order
+{
+    width: auto;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px 5px;
+    display: flex;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.home-page-link-order:hover
+{
+    background-color: rgb(220, 0, 0);
+}
+
+@media(max-width: 450px)
+{
+    .home-page-link-order
+    {
+        font-size: 0px;
+    }
+
+    .logo-contents-order
+    {
+        font-size: 20px
+    }
+
+    .logo-contents-order .k-container
+    {
+        background-color: white;
+        height: 32px;
+        width: 32px;
+        border-radius: 2px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 24px;
+        color: darkred;
+    }
+
+    .top-bar-order
+    {
+        padding: 10px 10px;
+        width: calc(100% - 20px);
+    }
 }

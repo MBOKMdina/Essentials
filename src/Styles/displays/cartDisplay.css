@@ -429,7 +429,7 @@
     }
 }
 
-@media(max-width: 740px) and (max-height: 360px)
+@media(max-width: 1100px) and (min-width: 451px)
 {
     .cart-display
     {

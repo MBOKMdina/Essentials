@@ -45,7 +45,7 @@ export default function SearchBar(props)
                 }} 
                 className="magnifying-glass" 
                 alt="Search-icon" 
-                src="Images/magnifyingGlass-icon.png"
+                src="/Images/magnifyingGlass-icon.png"
             />
         </div>)
 }

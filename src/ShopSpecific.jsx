@@ -38,7 +38,7 @@ export default function ShopSpecific()
     <div className="main-shop-display">
         {/*<div className="cover-page"></div>*/}
         <div className="top-bar-APK">
-            <img alt="Johannesburg CBD" className="johannesburg-APK" src={`Images/Joburg(CBD).jpg`} />
+            <img alt="Johannesburg CBD" className="johannesburg-APK" src={`./Images/Joburg(CBD).jpg`} />
         </div>
         <div className="items-catalog">
             {render}

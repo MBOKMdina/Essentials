@@ -49,7 +49,7 @@ export default function Item(props)
             console.log("Nope");
         }
         else
-        if(intInput < 0)
+        if(intInput <= 0)
         {
             
         }
@@ -115,7 +115,7 @@ export default function Item(props)
     {selected && <><div ref={background} className="quantity-background"></div>
     <div ref= {quantityUI} className="quantity">
         <div onClick={toggleQUI} className="close-QUI">
-            <img className="x" src="Images/close.png"/>
+            <img className="x" src="/Images/close.png"/>
         </div>
         <div className="quantity-contents">
             <div className="wrapper-QUI">

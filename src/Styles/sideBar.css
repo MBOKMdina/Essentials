@@ -59,7 +59,7 @@
     }
 }*/
 
-@media(max-width: 450px)
+@media(max-width: 550px)
 {
     .side-bar
     {
@@ -81,7 +81,7 @@
     }
 }
 
-@media(max-width: 740px) and (max-height: 360px)
+@media(max-width: 890px) and (max-height: 360px)
 {
     .side-bar
     {
@@ -94,4 +94,55 @@
         object-position: -360px;
     }
 
+}
+
+@media(max-width: 900px) and (min-width: 710px) and (min-height: 361px)
+{
+    .side-bar
+    {
+        display: none;
+    }
+
+    .top-bar-APK
+    {
+        top: 0px;
+        display: flex;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .johannesburg-APK
+    {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1200px) and (min-width: 901px) and (max-height: 900px)
+{
+    .side-bar
+    {
+        width: 400px;
+    }
+
+    .johannesburg
+    {
+        object-position: -770px;
+    }
+}
+
+@media(max-width: 1200px) and (min-height: 901px) and (max-height: 1400px)
+{
+    .side-bar
+    {
+        display: none
+    }
+}
+
+@media(max-width: 1400px) and (min-width: 1200px) and (min-height: 1000px)
+{
+    .johannesburg
+    {
+        object-position: -1050px;
+    }
 }

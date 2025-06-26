@@ -149,7 +149,7 @@ export default function ShopSearched()
     return (
     <div className="main-shop-display">
         <div className="top-bar-APK">
-            <img alt="Johannesburg CBD" className="johannesburg-APK" src={`Images/Joburg(CBD).jpg`} />
+            <img alt="Johannesburg CBD" className="johannesburg-APK" src={`/Images/Joburg(CBD).jpg`} />
         </div>
         <div className="items-catalog">
             {/*<div className="cover-page"></div>*/}

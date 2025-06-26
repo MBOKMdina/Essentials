@@ -77,7 +77,7 @@ export default function Cart()
     <><div className="top-bar-cart">
         <div className="deco-2"></div>
         <div className="decorative-strip-container">
-            <img src="./Images/Joburg(CBD).jpg" className="decorative-strip"/>
+            <img src="/Images/Joburg(CBD).jpg" className="decorative-strip"/>
             <div className="decorative-cube"></div>
         </div>
         <div className="left-package">

@@ -18,7 +18,7 @@
     display: flex;
     position: relative;
     align-items: center;
-    width: calc(100% - 1035.84px);
+    width: 400px;
 }
 
 .logo-contents-cart
@@ -84,7 +84,7 @@
     align-items: center;
     margin-right: 15px;
     height: 100%;
-    width: auto;
+    width: calc(100% - 700px);
     position: relative;
     /*justify-content: space-around;*/
 }
@@ -236,7 +236,7 @@
 
     .logo-contents-cart
     {
-        font-size: 20px;
+        font-size: 18px;
         margin-left: 0px;
     }
 
@@ -248,9 +248,9 @@
 
     .logo-contents-cart .k-container
     {
-        height: 32px;
-        width: 32px;
-        font-size: 24px;
+        height: 29px;
+        width: 29px;
+        font-size: 22px;
     }
 
     .home-page-link
@@ -272,13 +272,19 @@
         top: 12.4px;
         right: 0px;
         border-radius: 0px;
+        padding-right: 10px;
         border-top-left-radius: 35.2px;
     }
 
 }
 
-@media(max-width: 740px) and (max-height: 360px)
+@media(max-width: 1100px) and (min-width: 451px)
 {
+    .right-package
+    {
+        width: calc(100% - 400px);
+    }
+
     .decorative-strip-container
     {
         width: 100px;
@@ -296,12 +302,12 @@
 
     .search-bar-cart
     {
-        width: 200px;
+        /*width: 200px;*/
     }
 
     .left-package
     {
-        width: calc(100% - 420.84px); 
+        width: 300px;
     }
 
     .home-page-link
@@ -309,3 +315,8 @@
         font-size: 0px;
     }
 }
+
+/*@media(max-width: 800px) and (min-height: 451px) and (max-height: 1100px)
+{
+
+}*/

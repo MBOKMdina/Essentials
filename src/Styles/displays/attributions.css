@@ -34,3 +34,26 @@
     margin-bottom: 10px;
 }
 
+.link-back
+{
+    color: black;
+    text-decoration: none;
+    margin-top: 20px;
+    max-width: fit-content;
+    cursor: pointer;
+}
+
+.previouse-page
+{
+    width: 10px;
+    height: 10px;
+}
+
+@media (max-width: 450px)
+{
+    .credits
+    {
+        width: calc(100% - 40px);
+        /*margin-top: 40px;*/
+    }   
+}

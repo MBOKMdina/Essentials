@@ -49,7 +49,7 @@ export default function OrderPage()
     <>
         <div className="top-bar-order">
             <Logo className="logo-contents-order" />
-            <ShopButton/>
+            <ShopButton className="home-page-link-order"/>
             <Attribution className="attribution-order"/>
         </div>
         <div className="receipt-display">
